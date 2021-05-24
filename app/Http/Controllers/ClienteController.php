@@ -85,8 +85,15 @@ class ClienteController extends Controller
      * @param  \App\Models\Cliente  $cliente
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cliente $cliente)
+    public function destroy(Request $solicitud ,Cliente $cliente)
     {
+        $cliente->delete();
+        $clientes = Cliente::all();
+        return  (response()->json($clientes));
+
+
+
+
         //
     }
 }

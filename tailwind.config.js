@@ -23,8 +23,10 @@ module.exports = {
         width:{
             "5v":"5vw",
             "10v":"10vw",
+            "40v":"40vw",
             "75v":"75vw",
             "65v":"65vw",
+            "85v":"85vw",
             "100v":"100vw",
         }
     },
@@ -32,6 +34,7 @@ module.exports = {
     variants: {
         extend: {
             opacity: ['disabled'],
+            backgroundColor:['even'],
         },
     },
 

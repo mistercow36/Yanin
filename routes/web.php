@@ -16,7 +16,8 @@ use App\Http\Controllers\ClienteController;
 |
 */
 
-Route::view("a","a");
+//Route::get("roles",'App\Http\Controllers\Roles::index');
+//Route::view("a","a");
 Route::get('/', function () {
     return view('acceso');
 })->name("main");
