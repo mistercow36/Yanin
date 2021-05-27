@@ -16,7 +16,8 @@ use App\Http\Controllers\ClienteController;
 |
 */
 
-//Route::get("roles",'App\Http\Controllers\Roles::index');
+Route::get("roles",'App\Http\Controllers\Roles@index')->name("roles")->middleware("auth");;
+Route::post("asigna_roles",'App\Http\Controllers\Roles@asigna_roles')->name("asigna_roles");
 //Route::view("a","a");
 Route::get('/', function () {
     return view('acceso');
@@ -25,6 +26,7 @@ Route::get('/', function () {
 Route::resource('factura',FacturaController::class);
 Route::resource('cliente',ClienteController::class);
 Route::resource('empleado',EmpleadoController::class);
+Route::resource('mnaolo',\App\Http\Controllers\ManoloController::class);
 
 
 Route::get('/dashboard', function () {

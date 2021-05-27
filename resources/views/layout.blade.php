@@ -15,6 +15,9 @@
     {{--    <script src='https://kit.fontawesome.com/a076d05399.js'></script>--}}
 </head>
 <body class="container mx-auto w-screen bg-wite">
+@role("administrador")
+    <h1>Administrado</h1>
+@endrole
 <div id="app">
     <x-layout.cabecera class="h-15v">
     </x-layout.cabecera >
