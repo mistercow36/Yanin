@@ -1,7 +1,7 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
@@ -21,68 +21,46 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Gestor de una empresa básica
-*Instalamos la aplicación
-``````shell
-laravel new empresa_roles
-``````
+## Learning Laravel
 
-*App para usar de ejemplo para gestionar roles
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-*Instalamos la autenticación con breeze (esto me instala tailwind)
-``````shell
-composer require  'laravel/breeze'
-php artisan breeze:install
-(para la parte de cliente, tailwindcss )
-npm install  
-``````
+You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-## Instalamos la autentificación con breeze
-   ``````shell
-   php artisan breeze:install
-   npm install
-   ``````
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
+## Laravel Sponsors
 
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-1. Creamos los modelos con --all (modelo, controlador, migracion, seeder, factory)
-   ``````shell
-   php artisan make:model Cliente -a
-   php artisan make:model Factura -a
-   php artisan make:model Empleado -a
-   php artisan make:model Idioma -a
-   php artisan make:model cliente_factura -a 
-   ``````
-2. Rellenamos las migraciones
-   Para ello escribimos los ficheros ubicados en ****database/migrations****
-   Concretamente se rellenan los ficheros.
-   Observar la forma de establecer el foreign key en las tablas
-      ![Migraciones](./documentacion/imagenes/migraciones.png).
-3. Establecemos los seeders para poblar la bd
-    Primero establecemos el idioma en castellano, estableciendo en
-   ****config/app.php**** el parámetro correspondiente
-   ``````bash
-      'faker_locale' => 'es_ES',
-   `````
-4.- Ejecutamos las migraciones para crear la base de datos y poblarla. Previamente nos aseguramos que existe la base de datos que tengamos especificada en el fichero de configuración ***(ver .ENV )***
-   ``````bash
-      php artisan migrate:install
-      php artisan migrate --seed
-   ``````
-   En case de tener que volver a ejectuarlas, no olvides el parámetro *****fresh*****
-   ``````bash
-      php artisan migrate:fresh --seed
-   ``````
-   
+### Premium Partners
 
-## Navegación
-![Caso de uso ppal](./documentacion/Caso_uso.png).
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[Many](https://www.many.co.uk)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+- **[OP.GG](https://op.gg)**
+- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
+- **[Lendio](https://lendio.com)**
 
-## Instalamos página general 
-1. Usamos componentes si no hay funcionalidad
-2. Usamos vue si el componente tiene funcionalidad
+## Contributing
 
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
+## Code of Conduct
 
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
+## Security Vulnerabilities
 
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

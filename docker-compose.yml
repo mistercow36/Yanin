@@ -15,7 +15,7 @@ services:
 #    volumes:
 #      - "./mysql_data:/bitnami/mysql/data"
   myapp:
-    image: docker.io/bitnami/laravel:9
+    image: docker.io/bitnami/laravel:10.0.2
 #    build: ./dockerfile/app
 #    user: oem
 

@@ -19,6 +19,8 @@ use App\Http\Controllers\ClienteController;
 Route::get("roles",'App\Http\Controllers\Roles@index')->name("roles")->middleware("auth");;
 Route::post("asigna_roles",'App\Http\Controllers\Roles@asigna_roles')->name("asigna_roles");
 //Route::view("a","a");
+
+
 Route::get('/', function () {
     return view('acceso');
 })->name("main");

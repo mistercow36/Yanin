@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreClienteRequest;
-use App\Http\Requests\UpdateClienteRequest;
 use App\Models\Cliente;
+use Illuminate\Http\Request;
 
 class ClienteController extends Controller
 {
@@ -15,6 +14,13 @@ class ClienteController extends Controller
      */
     public function index()
     {
+        $clientes=Cliente::all();
+
+        $campos = $clientes[0]->getAttributes();
+        unset ($campos['created_at']);
+        unset ($campos['updated_at']);
+        $campos = array_keys($campos);
+        return view("empresa.cliente.listado",['filas'=>$clientes, 'campos'=>$campos]);
         //
     }
 
@@ -31,10 +37,10 @@ class ClienteController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreClienteRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreClienteRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -47,6 +53,7 @@ class ClienteController extends Controller
      */
     public function show(Cliente $cliente)
     {
+        return view("empresa.cliente.show",["cliente"=>$cliente]);
         //
     }
 
@@ -64,11 +71,11 @@ class ClienteController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateClienteRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Cliente  $cliente
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateClienteRequest $request, Cliente $cliente)
+    public function update(Request $request, Cliente $cliente)
     {
         //
     }
@@ -79,8 +86,15 @@ class ClienteController extends Controller
      * @param  \App\Models\Cliente  $cliente
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cliente $cliente)
+    public function destroy(Request $solicitud ,Cliente $cliente)
     {
+        $cliente->delete();
+        $clientes = Cliente::all();
+        return  (response()->json($clientes));
+
+
+
+
         //
     }
 }
