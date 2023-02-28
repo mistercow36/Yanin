@@ -19,7 +19,7 @@ class EmpleadoSeeder extends Seeder
 
         //
         //Cada empleado hablará entre 1 y 6 idiomas
-        \App\Models\Empleado::factory()->count(30)->create()
+        \App\Models\Empleado::factory()->count(35)->create()
             ->each(function ($empleado){
                 $idiomas=['Francés', 'Alemán', 'Inglès',
                     'Catalán', 'Gallego','Vasco',

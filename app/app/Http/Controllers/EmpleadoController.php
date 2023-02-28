@@ -15,12 +15,12 @@ class EmpleadoController extends Controller
      */
     public function index()
     {
-        $empleados=Empleado::All();
-        $campos = $empleados[0]->getAttributes();
-        unset ($campos['created_at']);
-        unset ($campos['updated_at']);
-        $campos = array_keys($campos);
-        return view("empresa.empleado.listado",['filas'=>$empleados, 'campos'=>$campos]);
+        $empleados=Empleado::paginate(10);
+        //$campos = $empleados[0]->getAttributes();
+        //unset ($campos['created_at']);
+        //unset ($campos['updated_at']);
+        //$campos = array_keys($campos);
+        return view("empresa.empleado.listado1",['filas'=>$empleados]);
         //
 
         //

@@ -18,6 +18,7 @@ Route::resource("facturas", \App\Http\Controllers\FacturaController::class);
 Route::resource("empleados", \App\Http\Controllers\EmpleadoController::class);
 
 
+
 Route::get('/', function () {
     return view('acceso');
 })->name("main");
@@ -32,6 +33,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/', function () {
+        return view('acceso');
+    })->name("main");
 });
 
 require __DIR__.'/auth.php';

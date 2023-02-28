@@ -4,18 +4,19 @@
     <x-layout.menu class="justify-start h-full">
 {{--                <h1>Rol: -{{auth()->user()->roles()->get()}}-</h1>--}}
 
-{{--        @role("personal")--}}
+        @hasanyrole(["administrador","gestor"]);
         <x-form.a_href href="{{route('empleados.index')}}" class="mx-2">Empelados</x-form.a_href>
-{{--        @endrole--}}
-{{--        @role("comercial")--}}
+        @endrole
+        @hasanyrole(["administrador", "gestor", "comercial"])
         <x-form.a_href href="{{route('clientes.index')}}" class="mx-2">Clientes</x-form.a_href>
-{{--        @endrole--}}
-{{--        @role("contable")--}}
+        @endrole
+        @hasanyrole(["administrador", "comercial"])
         <x-form.a_href href="{{route('facturas.index')}}" class="mx-2">Facturas</x-form.a_href>
-{{--        @endrole--}}
-{{--        @role("administrador")--}}
-{{--            <x-form.a_href href="{{route('roles')}}" class="mx-2">Roles</x-form.a_href>--}}
-{{--        @endrole--}}
+       @endrole
+     {{--@hasanyrole("administrador")
+           <x-form.a_href href="{{route('roles')}}" class="mx-2">Roles</x-form.a_href>
+        @endrole
+        --}}
     </x-layout.menu>
 @endsection
 
